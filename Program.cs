@@ -64,8 +64,31 @@
             Console.WriteLine("Last index: " + carr2[^1]);
 
 
-            
-        }
+            //2D Arrays
+            int[,] array = new int[2, 2];
+            //for length -
+            // array.length will return all element count.
+            //for specific row
+            Console.WriteLine("All elements in 2D: " +array.Length);
+            Console.WriteLine("Rows: " +array.GetLength(0)); //for rows 0
+            Console.WriteLine("Cokumns: " +array.GetLength(1)); //for columns 1
+
+            //Task - Find some of values in each row
+            array[0,0] = 3;
+            array[0,1] = 4;
+            array[1, 0] = 6;
+            array[1, 1] = 8;
+            for (int i = 0; i < array.GetLength(0); i++)
+            {
+                int rowsum = 0;
+                for (int j = 0; j < array.GetLength(1); j++)
+                {
+                    rowsum += array[i, j];
+                }
+                Console.WriteLine("Sum of " + (i+1)  + " row: " + rowsum);
+
+            }
+            }
 
 
 
