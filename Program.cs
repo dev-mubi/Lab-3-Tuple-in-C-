@@ -24,7 +24,59 @@
             Console.WriteLine("Sum: " + res.Item1);
             Console.WriteLine("Division: " + res.Item2);
 
+
+            // - Arrays in C# - Collection of same data type.
+            // - It is reference type, Tuple is value type.
+            // - Bounds checking on each operation. ?? (Index oot of bound)
+            // - All elements are initialized with default values. (0 for int) (null for object type) In c/c++, garbage value is stored.
+            // - An array cannot be partially initialized. In C++, int x[5] = {1,2} is valid but not in C#.
+
+            //Syntax
+            int[] x = new int[10]; //allocation
+            //or
+            //int [] x; declaration
+            //x = new int[10]; allocation
+
+            //Initialization
+            int[] arr = new int[] { 2, 4, 6, 7, 5 }; //No size needed. Automatically guesses. If you give size less than or more than the initalized value, it will throw error.
+            //or
+            int[] arr2 = { 3, 5, 3, 5 };
+
+            //Var in arrays
+            var arr3 = new int[] { 1, 2, 8, 9 };
+            //or
+            var arr4 = new int[3]; //declaration
+            var arr5 = new[] { 2, 4, 6, 6 }; //Here it finds the type by itself.
+            //var arr6 = { 2, 4, 6, 4 }; //error
+            //var can also be used as local variable.
+
+            //Array Collection Expression (C# 12+)
+
+            int[] carr = [4, 2, 4, 2];
+            int[] carr2 = new int[2];
+            carr2 = [3, 45, 3, 34];
+            Console.WriteLine(carr.Length); //RETURNS 4 - Recreates the array with new size.
+            //carr2[5] = 33; //Index out of range exception
+
+            // ^ (Hat) Operator
+            // ^1 --> Last index
+
+            Console.WriteLine("Last index: " + carr2[^1]);
+
+
+            
         }
+
+
+
+
+
+
+
+
+
+
+
         //tuple enables us to return multiple values from a function.
 
         public static (int sum, double div) Calculate(int x, int y)
